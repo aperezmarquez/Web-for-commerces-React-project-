@@ -14,8 +14,8 @@ export default function Sig_in () {
     }
     
     return (
-        <div className="flex items-center justify-center h-screen w-full">
-            <div className="h-full w-full bg-black bg-opacity-50 filter blur-sm -z-10 absolute"></div>
+        <div className="flex items-center justify-center h-screen w-full absolute">
+            <div className="h-full w-full bg-black bg-opacity-10 filter blur-lg -z-10 absolute"></div>
             <div className="grid grid-rows-4 grid-flow-col place-items-center gap-10 p-5 bg-white h-80 justify-center filter z-10 absolute">
                 <h1 className="text-center mt-3">SIGN IN</h1>
                 <input type="text" 
