@@ -1,5 +1,6 @@
 import { Ubuntu } from 'next/font/google'
 import './globals.css'
+import './layout.css'
 import Link from 'next/link'
 
 const ubuntu = Ubuntu({ 

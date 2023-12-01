@@ -1,55 +1,3 @@
-nav {
-    padding-top: 1em;
-    padding-left: 4em;
-    padding-right: 4em;
-    background-color: #33261F;
-}
-
-.fondo {
-    background-color: #33261F;
-}
-
-@property --myColor1 {
-    syntax: '<color>';
-    initial-value: rgb(3, 209, 154);
-    inherits: false;
-}
-  
-@property --myColor2 {
-    syntax: '<color>';
-    initial-value: rgb(6, 202, 166);
-    inherits: false;
-}
-
-@property --myColor3 {
-    syntax: '<color>';
-    initial-value: rgba(0,187,187,1);
-    inherits: false;
-}
-
-@property --porcentaje {
-    syntax: '';
-    initial-value: 32%;
-    inherits: false;
-}
-
-.seccion {
-    --porcentaje: 32%;
-
-    font-weight: 500;
-
-    color: rgb(49, 49, 49);
-    transition: 0.5s;
-    background: linear-gradient(90deg, var(--myColor1) 0%, var(--myColor2) var(--porcentaje), var(--myColor3) 100%);
-    transition: --myColor1 0.3s, --myColor2 0.3s, --myColor3 0.3s, --porcentaje 0.3s;
-}
-
-.seccion:hover {
-    --myColor1: rgba(0,187,187,1);
-    --myColor3: rgb(3, 209, 154);
-    --porcentaje: 68%;
-}
-
 .main-text {
     margin-top: 1.2em;
     margin-left: 2.2em;
@@ -62,10 +10,30 @@ nav {
     color: white;
 }
 
+@property --colorHover1 {
+    syntax: '<color>';
+    initial-value: rgb(255, 153, 0);
+    inherits: false;
+}
+
+@property --colorHover2 {
+    syntax: '<color>';
+    initial-value: #f05d08;
+    inherits: false;
+}
+
 #search {
-    background: -webkit-linear-gradient(rgb(255, 153, 0) 0%, #f05d08 100%);
+    --porcent: 0%;
+    transition: --colorHover1 1s, --colorHover2 1s;
+    background: linear-gradient(var(--colorHover1) 0%, var(--colorHover2) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+#search:hover {
+    --porcent: 50%;
+    --colorHover1: #f05d08;
+    --colorHover2: rgb(255, 153, 0);
 }
 
 #more {
@@ -75,7 +43,7 @@ nav {
 }
 
 .description {
-    margin-top: 4em;
+    margin-top: 5em;
     margin-left: 6.8em;
     color: #BDBDBD;
     font-weight: 400;
@@ -97,8 +65,20 @@ nav {
 }
 
 .botonesCommerces {
-    padding-top: 4em;
+    position: absolute;
+
+    padding-top: 3em;
     padding-left: 6.8em;
+
+    font-weight: 500;
+}
+
+.boton {
+    transition: 0.5s;
+}
+
+.boton:hover {
+    transform: translate(0%, -10%);
 }
 
 #textbutton {
@@ -106,8 +86,11 @@ nav {
 
     background-color: #996A4F;
     border-radius: 0.2em;
+    color: #efc2a8;
+}
 
-    color: #2c2c2c;
+#textbutton:hover {
+    color: #413027;
 }
 
 #commercesbutton {
@@ -116,6 +99,10 @@ nav {
 
     background-color: #A34610;
     border-radius: 0.2em;
+    color: #ffac7b;
+}
 
-    color: #2c2c2c;
+#commercesbutton:hover {
+    box-shadow: 0 0 40px 5px #A34610;
+    color: #ffd8c2;
 }
