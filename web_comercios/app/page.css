@@ -1,51 +1,68 @@
+@property --textColor {
+    syntax: '<color>';
+    initial-value: #007076;
+    inherits: false;
+}
+
+@property --everythingColor {
+    syntax: '<color>';
+    initial-value: #00a3ab;
+    inherits: false;
+}
+
 .main-text {
     margin-top: 1.2em;
     margin-left: 2.2em;
-    color: #BDBDBD;
+    color: var(--textColor);
     font-size: 3em;
     font-weight: 700;
 }
 
 #everything {
-    color: white;
+    color: var(--everythingColor);
 }
 
 @property --colorHover1 {
     syntax: '<color>';
-    initial-value: rgb(255, 153, 0);
+    initial-value: #FF9D00;
     inherits: false;
 }
 
 @property --colorHover2 {
     syntax: '<color>';
-    initial-value: #f05d08;
+    initial-value: #ff9b05;
+    inherits: false;
+}
+
+@property --colorHover3 {
+    syntax: '<color>';
+    initial-value: #C7004F;
     inherits: false;
 }
 
 #search {
     --porcent: 0%;
-    transition: --colorHover1 1s, --colorHover2 1s;
-    background: linear-gradient(var(--colorHover1) 0%, var(--colorHover2) 100%);
+    transition: --colorHover1 1s, --colorHover3 1s;
+    background: linear-gradient(90deg, var(--colorHover1) 0%, var(--colorHover2) 60%, var(--colorHover3) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 #search:hover {
-    --porcent: 50%;
-    --colorHover1: #f05d08;
-    --colorHover2: rgb(255, 153, 0);
+    --colorHover1: #C7004F;
+    --colorHover3: #FF9D00;
 }
 
 #more {
-    color: #33261F;
-    text-shadow: 2px 0 #BDBDBD, -2px 0 #BDBDBD, 0 2px #BDBDBD, 0 -2px #BDBDBD,
-    1px 1px #BDBDBD, -1px -1px #BDBDBD, 1px -1px #BDBDBD, -1px 1px #BDBDBD;
+    color: #F0E7DE;
+    text-shadow: 2px 0 var(--textColor), -2px 0 var(--textColor), 0 2px var(--textColor), 0 -2px var(--textColor),
+    1px 1px var(--textColor), -1px -1px var(--textColor), 1px -1px var(--textColor), -1px 1px var(--textColor);
 }
 
 .description {
     margin-top: 5em;
     margin-left: 6.8em;
-    color: #BDBDBD;
+    color: var(--textColor);
     font-weight: 400;
     word-break: break-word;
 }
@@ -83,26 +100,30 @@
 
 #textbutton {
     padding: 0.5em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
 
-    background-color: #996A4F;
+    background-color: #a33f5f;
     border-radius: 0.2em;
-    color: #efc2a8;
+    color: #dccad0;
 }
 
 #textbutton:hover {
-    color: #413027;
+    color: #52001a; 
 }
 
 #commercesbutton {
     padding: 0.5em;
-    margin-left: 13.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-left: 15.5em;
 
-    background-color: #A34610;
+    background-color: #c7004f;
     border-radius: 0.2em;
-    color: #ffac7b;
+    color: #f1b5cf;
 }
 
 #commercesbutton:hover {
-    box-shadow: 0 0 40px 5px #A34610;
-    color: #ffd8c2;
+    box-shadow: 0 0 40px 5px #C7004F;
+    color: #f9edf1;
 }

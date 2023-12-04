@@ -14,8 +14,8 @@ export default function Home() {
         <p className='description'>Find the product you have been looking for a long time in just a 
                                       <br></br>couple of minutes, with us</p>
         <div className='botonesCommerces flex justify-start'>
-          <Link id='textbutton' href='http://localhost:3000/sign-in' className='boton'>Insertar Text</Link>
-          <Link id='commercesbutton' href='http://localhost:3000/comercios' className='boton'>Visit Commerces</Link>
+          <Link id='textbutton' href='http://localhost:3000/sign-in' className='boton'>Sign In</Link>
+          <Link id='commercesbutton' href='http://localhost:3000/comercios' className='boton'>Commerces</Link>
         </div>
       </div>
       <div className='col-end-3'>
