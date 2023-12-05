@@ -39,13 +39,13 @@ nav {
     font-weight: 500;
 
     transition: 0.5s;
-    color: #504740;
+    color: #000;
     background: linear-gradient(90deg, var(--myColor1) 0%, var(--myColor2) var(--porcentaje), var(--myColor3) 100%);
     transition: --myColor1 0.5s, --myColor2 0.5s, --myColor3 0.5s, --porcentaje 0.5s;
 }
 
 .seccion:hover {
-    color: #504740;
+    color: #000;
     --myColor1: #00a3ab;
     --myColor2: #35c3ca;
     --myColor3: #5adee5;

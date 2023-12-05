@@ -127,3 +127,87 @@
     box-shadow: 0 0 40px 5px #C7004F;
     color: #f9edf1;
 }
+
+.card {
+    margin-top: 4.3em;
+    margin-left: 8em;
+
+    background: url('./imgs/arcade_machine.jpg');
+    background-size: cover;
+
+    width: 18em;
+    height: 27em;
+
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card-elements {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.320, 1);
+
+    background: rgba(0,0,0, .2);
+    opacity: 0;
+
+    width: 18em;
+    height: 1em;
+}
+
+.card-elements-holder {
+    background-color: #ff9d00;
+    color: rgb(46, 46, 42);
+    
+    width: 18em;
+    height: 1em;
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.320, 1);
+
+    padding: 5%;
+}
+
+.card-text {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.card-description {
+    margin: 0.5em;
+    margin-bottom: 1em;
+}
+
+#card-button {
+    font-weight: 500;
+    margin-left: 9.6em;
+
+    padding: 0.5em;
+    padding-left: 1em;
+    padding-right: 1em;
+
+    background-color: #7e0028;
+    border-radius: 0.2em;
+    color: #dccad0;
+}
+
+.card:hover {
+    margin-top: 3.8em;
+    margin-left: 7.5em;
+
+    width: 19em;
+    height: 28em;
+}
+
+.card:hover .card-elements {
+    opacity: 1;
+    width: 19em;
+    height: 28em;
+}
+
+.card:hover .card-elements-holder {
+    width: 19em;
+    height: 11em;
+}
+
+#card-button:hover {
+    box-shadow: 0 0 10px 5px #7e0028;
+}
