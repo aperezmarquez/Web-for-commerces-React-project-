@@ -1,5 +1,5 @@
 import './page.css';
-import bestSellerImg from './imgs/bestSeller.png';
+import bestSellerImg from './imgs/arcade_machine.jpg';
 import Image from 'next/image';
 import Link from 'next/link';
 

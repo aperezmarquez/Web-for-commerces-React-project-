@@ -1,5 +1,5 @@
-Secondary: #996A4F
-Primary: #A34610
-Accent: #54B8B8
-Background: #33261F
-Text: #BDBDBD
+Secondary: #7e0028 
+Primary: #ff9d00
+Accent: #C7004F
+Background: #F0E7DE
+Text: #007076 
