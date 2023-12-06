@@ -156,7 +156,7 @@
 }
 
 .card-elements-holder {
-    background-color: #ff9d00;
+    background-color: #ffc400;
     color: rgb(46, 46, 42);
     
     width: 18em;
@@ -209,5 +209,5 @@
 }
 
 #card-button:hover {
-    box-shadow: 0 0 10px 5px #7e0028;
+    box-shadow: 0 0 10px 5px #6e2d42;
 }

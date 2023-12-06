@@ -6,7 +6,7 @@ export default function Sig_in () {
     }
 
     function handleUnFocusU(event) {
-        event.target.placeholder = "Username";
+        event.target.placeholder = "Email";
     }
 
     function handleUnFocusP(event) {
@@ -20,7 +20,7 @@ export default function Sig_in () {
                 <h1 className="text-center mt-3">SIGN IN</h1>
                 <input type="text" 
                        className="text-center w-72 h-12 border rounded-full transition-opacity" 
-                       placeholder="Username" 
+                       placeholder="Email" 
                        onFocus={handleFocus} 
                        onBlur={handleUnFocusU}></input>
                 <input type="password" 
