@@ -28,7 +28,7 @@ export default function Sig_in () {
                        placeholder="Password"
                        onFocus={handleFocus}
                        onBlur={handleUnFocusP}></input>
-                <button className="w-44 h-10 border transition ease-in delay-100 hover:bg-slate-400 active:bg-red-600">CLICK</button>
+                <button className="w-44 h-10 border transition ease-in delay-100 hover:bg-slate-400 active:bg-red-600">LOG IN</button>
             </div>
         </div>
     );

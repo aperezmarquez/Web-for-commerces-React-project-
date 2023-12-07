@@ -35,6 +35,7 @@ nav {
 
 .seccion {
     --porcentaje: 32%;
+    width: 7.2em;
 
     font-weight: 500;
 

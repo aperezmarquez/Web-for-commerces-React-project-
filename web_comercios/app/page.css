@@ -12,10 +12,8 @@
 
 .main-text {
     margin-top: 1.2em;
-    margin-left: 2.2em;
+    margin-left: 18%;
     color: var(--textColor);
-    font-size: 3em;
-    font-weight: 700;
 }
 
 #everything {
@@ -63,22 +61,7 @@
     margin-top: 5em;
     margin-left: 6.8em;
     color: var(--textColor);
-    font-weight: 400;
     word-break: break-word;
-}
-
-.bestSellerImg {
-    margin-top: 4em;
-    margin-right: 6.8em;
-    width: 20em;
-    transition: 0.5s;
-}
-
-.bestSellerImg:hover {
-    margin-top: 3.5em;
-    margin-right: 6.3em;
-    width: 21em;
-    filter: grayscale(50%);
 }
 
 .botonesCommerces {
