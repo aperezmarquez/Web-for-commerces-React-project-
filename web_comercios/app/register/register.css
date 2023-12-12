@@ -1,0 +1,84 @@
+.background-page {
+    z-index: -2;
+    overflow: hidden;
+}
+
+.pantalla-borrosa {
+    z-index: 0;
+    background: rgba(0,0,0,0);
+    backdrop-filter: blur(1em);
+}
+
+.element-holder {
+    background-color: rgb(33, 33, 33);
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.320, 1);
+    z-index: 0;
+}
+
+.hover-background-register {
+    bottom: 97.5%;
+    width: 20.5em;
+    height: 0.5em;
+
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.320, 1);
+    background: linear-gradient(45deg, #a60042 0%, #a83262 15%, #ff9d00 75%, #ffb53e 100%);
+
+    z-index: -1;
+}
+
+.element-holder:hover .hover-background-register {
+    height: 17.5em;
+    bottom: 2.8%;
+}
+
+.signup-text {
+    transition: 0.3s;
+    color: #00929a;
+    font-weight: 900;
+    font-size: 1.5em;
+}
+
+.element-holder:hover .signup-text {
+    color: rgb(33, 33, 33);
+}
+
+.input {
+    background-color: rgb(61, 61, 61);
+    border-color: rgb(50, 50, 50);
+}
+
+.input {
+    color: #e8e8e8;
+    transition: 0.3s;
+    background-color: rgb(61, 61, 61);
+    border-color: rgb(50, 50, 50);
+}
+
+.element-holder:hover .input {  
+    color: rgb(33, 33, 33);
+    background-color: #deac4a;
+    border-color: #d5952f;
+}
+
+.element-holder:hover .input::placeholder {
+    color: #585249;
+}
+
+.login-button-register {
+    border: 5px;
+    border: solid border transparent; 
+    border-radius: 0.7em;
+
+    color: rgb(33, 33, 33);
+    font-weight: 500;
+
+    background: #57abb8;
+    background-clip: padding-box;
+
+    transition: all 1s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.element-holder:hover .login-button-register {
+    color: #dedcd2;
+    background: rgb(43, 43, 43);
+}
