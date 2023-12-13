@@ -1,14 +1,12 @@
-import Note from './Commerces.jsx'
-import Creator from './Creator.jsx'
+import Commerce from './Commerces.jsx'
 import './CommerceList.css'
 
-const NoteList = ({ notes, createNote, handleDelete, handleEdit }) => {
+const CommercesList = ({ commerces }) => {
     return (
-        <div className='notes-list row'>
-            <Creator createNote={createNote}/>
-            {notes.map((note)=><Note key={note.id} id={note.id} tittle={note.tittle} text={note.text} handleDelete={handleDelete} handleEdit={handleEdit}/>)}
+        <div className='notes-list grid grid-cols-3 gap-10'>
+            {commerces.map((commerce)=><Commerce key={commerce.id} id={commerce.id} tittle={commerce.tittle} text={commerce.text}/>)}
         </div>
     );
 }
 
-export default NoteList;
+export default CommercesList;

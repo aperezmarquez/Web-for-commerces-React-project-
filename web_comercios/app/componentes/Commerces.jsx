@@ -1,62 +1,22 @@
 import './Commerces.css'
 import { useRef } from 'react';
+import Link from 'next/link';
 
-const commerce = ({ id, tittle, text, handleDelete, handleEdit }) => {
-    /*const [value, setValue] = useState({
-        tittle: tittle,
-        text: text
-    });*/
+const commerce = ({ id, tittle, text }) => {
 
     const tittleInput = useRef();
     const textInput = useRef();
-
-    const changeToEditMode = () => {
-        const header = document.getElementById(id + 'header');
-        const editor = document.getElementById(id + 'editor');
-        const boton = document.getElementById(id + 'boton');
-
-        const hidden = header.getAttribute('hidden');
-
-        if (hidden) {
-            editor.setAttribute('hidden', 'hidden');
-            header.removeAttribute('hidden');
-            boton.innerHTML = 'EDITAR';
-            handleEdit(id, tittleInput.current.value, textInput.current.value);
-        } else {
-            tittleInput.current.value = tittle;
-            textInput.current.value = text;
-            document.getElementById(id + 'text').innerHTML = "Texto || " + (120 - textInput.current.value.length) + " Restantes";
-            header.setAttribute('hidden', 'hidden');
-            editor.removeAttribute('hidden');
-            boton.innerHTML = 'GUARDAR';
-        }
-    }
-
-    const textCounter = () => {
-        document.getElementById(id + 'text').innerHTML = "Texto || " + (120 - textInput.current.value.length) + " Restantes";
-
-        if (textInput.current.value.length > 120) {
-            document.getElementById(id + 'text').innerHTML = "Texto || " + 0 + " Restantes";
-            textInput.current.value = textInput.current.value.substring(0, textInput.current.value.length - 1);
-        }
-    }
-
-    const tittleCounter = () => {
-        if (tittleInput.current.value.length > 20) {
-            tittleInput.current.value = tittleInput.current.value.substring(0, tittleInput.current.value.length - 1);
-        }
-    }
 
     return (
         <div className="commerce">
             <div className='commerce-info'>
                 <div className="commerce-footer absolute" id='footer'>
-                    <button className='commerce-visit rounded-xl' id={id + 'boton'} onClick={changeToEditMode}>Visit Commerce</button>
+                    <Link className='commerce-visit rounded-xl' id={id + 'boton'} href=''>Visit Commerce</Link>
                 </div>
 
                 <div className="commerce-header" id={id + 'header'}>
-                    <h2 className="commerce-tittle">Arcades</h2>
-                    <div className="commerce-small-description ml-2 mt-3">Venta de arcade machines</div>
+                    <h2 className="commerce-tittle">{tittle}</h2>
+                    <div className="commerce-small-description ml-2 mt-3">{text}</div>
                     <div className='commerce-description ml-2 mt-3'>Descripcion de tienda de arcade machines</div>
                 </div>
             </div>

@@ -5,66 +5,52 @@ import CommerceList from "../componentes/CommerceList";
 import Commerces from "../componentes/Commerces";
 import { useEffect, useState } from 'react'
 import { nanoid } from 'nanoid'
+import './commercesPage.css';
 
 export default function Comercios () {
-    const [notes, setNotes] = useState([])
+    const [commerces, setCommerces] = useState([
+      {
+        id: nanoid(),
+        tittle: "Arcade",
+        text: "text"
+      },
+      {
+        id: nanoid(),
+        tittle: "Vinils",
+        text: "text"
+      },
+      {
+        id: nanoid(),
+        tittle: "Clocks",
+        text: "text"
+      },
+      {
+        id: nanoid(),
+        tittle: "Objects",
+        text: "text"
+      }
+    ])
 
     const createNewNote = (tittle, text) => {
-      const newNote = {
+      const newCommerce = {
         id: nanoid(),
         tittle: tittle,
         text: text
       }
   
-      const newNotes = [...notes, newNote];
-      setNotes(newNotes);
+      const newCommerces = [...commerces, newCommerce];
+      setCommerces(newCommerces);
     }
   
-    useEffect(() => {
-      const item = JSON.parse(localStorage.getItem('notes-data'));
-    
-      if (item) {
-        setNotes(item)
-      }
-    }, []);
-  
-    useEffect(() => {
-      localStorage.setItem('notes-data', JSON.stringify(notes));
-    }, [notes]);
-  
-    const [noteName, setNoteName] = useState('');
-  
-    const handleDelete = (id) => {
-      const newNotes = notes.filter((note) => note.id != id);
-      setNotes(newNotes);
-    }
-  
-    const handleEdit = (id, tittle, text) => {
-      const changedNoteIndex = notes.findIndex((note) => note.id == id);
-      
-      if (changedNoteIndex != -1) {
-        const changedNote = notes[changedNoteIndex];
-        changedNote.tittle = tittle;
-        changedNote.text = text;
-  
-        const newNotes = [...notes];
-        newNotes[changedNoteIndex] = changedNote;
-  
-        setNotes(newNotes);
-      }
-    }
+    const [commerceName, setCommerceName] = useState('');
 
     return (
-        <div className="page-commerces h-full w-full">
-            <h1 className='app-tittle'>LISTA DE NOTAS</h1>
-            <Searcher setNoteName={setNoteName}/>
+        <div className="page-commerces h-full w-full p-10 absolute">
+            <Searcher setCommerceName={setCommerceName}/>
             <CommerceList 
-                notes={notes.filter((note) => note.tittle.toLowerCase().includes(noteName.toLowerCase()))} 
-                createNote={createNewNote} 
-                handleDelete={handleDelete}
-                handleEdit={handleEdit}
+                commerces={commerces.filter((commerce) => commerce.tittle.toLowerCase().includes(commerceName.toLowerCase()))} 
+                createNote={createNewNote}
             />
-            <Commerces />
         </div>
     );
 }

@@ -1,7 +1,7 @@
 .commerce {
     display: flex;
     flex-direction: column;
-    justify-content: end;
+    justify-content: flex-end;
 
     margin-top: 2em;
     margin-left: 2em;
@@ -70,12 +70,14 @@
 }
 
 .commerce-footer {
+    --onOffBoton: 0s;
     display: flex;
     justify-content: flex-end;
-    align-items: end;
+    align-items: flex-end;
 
     width: 13.7em;
-    transition: display 0s, opacity var(--onOffBoton);
+    height: 7em;
+    transition: display 0s, opacity var(--onOffBoton), height 0.4s;
 
     opacity: 0;
 }
@@ -83,6 +85,9 @@
 .commerce-visit {
     width: 8em;
     height: 2em;
+
+    padding-left: 0.3em;
+    padding-top: 0.2em;
 
     transition: 0.5s;
 
@@ -98,7 +103,8 @@
 }
 
 .commerce:hover .commerce-footer {
-    --onOffBoton: 0s;
+    --onOffBoton: 1.5s;
+    z-index: 0;
     
     height: 15.5em;
 

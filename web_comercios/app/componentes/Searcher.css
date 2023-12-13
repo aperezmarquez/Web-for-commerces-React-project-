@@ -4,16 +4,20 @@
 }
 
 .searcher-text {
-    background-color: rgb(207, 179, 146);
-    color: rgb(87, 73, 58);
+    background-color: #fcd699;
+    color: rgb(59, 57, 55);
+
+    padding-left: 3.5%;
 
     height: 2.2em;
+    width: 100%;
 
-    border-top-left-radius: 0.3em;
-    border-bottom-left-radius: 0.3em;
-    border-right: 0em;
-    border-style: solid;
-    border-color: rgb(87, 73, 58);
+    border-radius: 0.3em;
+}
+
+.search-icon {
+    margin-left: 1.2em;
+    margin-top: 0.5em;
 }
 
 .searcher-search {
