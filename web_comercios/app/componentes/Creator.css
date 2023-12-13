@@ -1,0 +1,88 @@
+.creator {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 2em;
+    margin-left: 2em;;
+
+    padding-top: 0.3em;
+    padding-left: 0.7em;
+    padding-bottom: 0.7em;
+    padding-right: 0.7em;
+
+    background-color: rgb(138, 118, 96);
+
+    border-radius: 5%;
+    border-style: solid;
+    border-width: 0.2em;
+    border-color: rgb(95, 79, 63);
+
+    width: 15em;
+    height: 15em;
+}
+
+.creator-tittle {
+    background-color: rgb(207, 179, 146);
+    color: rgb(87, 73, 58);
+
+    width: 13.2em;
+    margin-top: 0.4em;
+
+    border-radius: 0.3em;
+    border-style: solid;
+    border-color: rgb(87, 73, 58);
+}
+
+.creator-text {
+    background-color: rgb(207, 179, 146);
+    color: rgb(87, 73, 58);
+
+    height: 8em;
+    width: 13.2em; 
+    margin-top: 0.5em;
+
+    border-radius: 0.3em;
+    border-style: solid;
+    border-color: rgb(87, 73, 58);
+    border-width: 0.15em;
+}
+
+.creator-footer {
+    display: flex;
+    margin-top: auto;
+}
+
+.creator-create {
+    margin-top: 0.5em;
+    margin-left: auto;
+    padding-top: 0.2em;
+
+    background-color: rgb(163, 141, 118);
+    color: rgb(240, 220, 196);
+    height: 2.2em;
+}
+
+.creator-create:hover {
+    background-color: rgb(110, 94, 78);
+    color: rgb(190, 173, 152);
+}
+
+.creator-word-counter {
+    text-align: center;
+
+    border-top-left-radius: 0.4em;
+    border-bottom-left-radius: 0.4em;
+    border-right-style: solid;
+    border-width: 0.2em;
+
+    background-color: rgb(163, 141, 118);
+    color: rgb(240, 220, 196);
+    width:7em;
+    height: 2.2em;
+
+    margin-top: 0.5em;
+    padding-top: 0.3em;
+    padding-left: 0.2em; 
+    padding-right: 0.2em;
+    margin-bottom: 0.5em;
+}

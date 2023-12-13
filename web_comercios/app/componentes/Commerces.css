@@ -1,0 +1,89 @@
+.commerce {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    margin-top: 2em;
+    margin-left: 2em;
+
+    background: url('../imgs/arcade_machine.jpg');
+
+    width: 15em;
+    height: 17em;
+}
+
+.commerce-info {
+    width: 15em;
+    height: 7em;
+
+    background-color: rgb(33,33,33);
+
+    padding-top: 0.3em;
+    padding-left: 0.7em;
+    padding-bottom: 0.7em;
+    padding-right: 0.7em;
+
+    border-bottom-width: 0.5em;
+    border-color: #fdaf33;
+}
+
+.commerce-footer {
+    display: none;
+
+    width: 13.7em;
+    bottom: 20.5%;
+}
+
+.commerce-tittle {
+    color: #008188;
+
+    font-weight: 600;
+    font-size: large;
+
+    word-wrap: break-word;
+}
+
+.commerce-small-description {
+    color: #008188;
+
+    font-weight: 400;
+    font-size: small;
+
+    word-wrap: break-word;
+}
+
+.commerce-description {
+    display: none;
+
+    color: #008188;
+
+    font-weight: 400;
+    font-size: small;
+
+    word-wrap: break-word;
+}
+
+.commerce-visit {
+    width: 8em;
+    height: 2em;
+
+    background-color: #7e0028;
+    color: #d4aeba;
+
+    font-weight: 500;
+}
+
+.commerce-edit:hover {
+    background-color: rgb(110, 94, 78);
+    color: rgb(190, 173, 152);
+}
+
+.commerce:hover .commerce-footer {
+    display: flex;
+    justify-content: end;
+}
+
+.commerce:hover .commerce-info {
+    height: 17em;
+    background-color: rgba(33,33,33,0.6);
+}
