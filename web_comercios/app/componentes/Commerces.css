@@ -5,6 +5,7 @@
 
     margin-top: 2em;
     margin-left: 2em;
+    margin-bottom: 2em;
 
     background: url('../imgs/arcade_machine.jpg');
 
@@ -15,6 +16,8 @@
 .commerce-info {
     width: 15em;
     height: 7em;
+
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.320, 1);
 
     background-color: rgb(33,33,33);
 
@@ -27,15 +30,10 @@
     border-color: #fdaf33;
 }
 
-.commerce-footer {
-    display: none;
-
-    width: 13.7em;
-    bottom: 20.5%;
-}
-
 .commerce-tittle {
     color: #008188;
+
+    transition: 0.3s;
 
     font-weight: 600;
     font-size: large;
@@ -46,6 +44,8 @@
 .commerce-small-description {
     color: #008188;
 
+    transition: 0.3s;
+
     font-weight: 400;
     font-size: small;
 
@@ -55,6 +55,8 @@
 .commerce-description {
     display: none;
 
+    transition: 0.3s;
+
     color: #008188;
 
     font-weight: 400;
@@ -63,9 +65,26 @@
     word-wrap: break-word;
 }
 
+@property --onOffBoton {
+    initial-value: 1s;
+}
+
+.commerce-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+
+    width: 13.7em;
+    transition: display 0s, opacity var(--onOffBoton);
+
+    opacity: 0;
+}
+
 .commerce-visit {
     width: 8em;
     height: 2em;
+
+    transition: 0.5s;
 
     background-color: #7e0028;
     color: #d4aeba;
@@ -73,17 +92,36 @@
     font-weight: 500;
 }
 
-.commerce-edit:hover {
-    background-color: rgb(110, 94, 78);
-    color: rgb(190, 173, 152);
+.commerce-visit:hover {
+    box-shadow: 0 0 10px 5px #7e0028;
+    color: #eedbe1;
 }
 
 .commerce:hover .commerce-footer {
-    display: flex;
-    justify-content: end;
+    --onOffBoton: 0s;
+    
+    height: 15.5em;
+
+    opacity: 1;
 }
 
 .commerce:hover .commerce-info {
     height: 17em;
-    background-color: rgba(33,33,33,0.6);
+    background-color: rgba(33,33,33,0.8);
+}
+
+.commerce:hover .commerce-tittle {
+    font-size: x-large;
+    font-weight: 900;
+}
+
+.commerce:hover .commerce-small-description {
+    font-size: medium;
+    font-weight: 500;
+}
+
+.commerce:hover .commerce-description {
+    display: block;
+    font-size: medium;
+    font-weight: 500;
 }

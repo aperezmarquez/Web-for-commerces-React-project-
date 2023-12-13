@@ -1,7 +1,8 @@
 "use client"
 
 import Searcher from "../componentes/Searcher";
-import NoteList from "../componentes/CommerceList";
+import CommerceList from "../componentes/CommerceList";
+import Commerces from "../componentes/Commerces";
 import { useEffect, useState } from 'react'
 import { nanoid } from 'nanoid'
 
@@ -57,12 +58,13 @@ export default function Comercios () {
         <div className="page-commerces h-full w-full">
             <h1 className='app-tittle'>LISTA DE NOTAS</h1>
             <Searcher setNoteName={setNoteName}/>
-            <NoteList 
+            <CommerceList 
                 notes={notes.filter((note) => note.tittle.toLowerCase().includes(noteName.toLowerCase()))} 
                 createNote={createNewNote} 
                 handleDelete={handleDelete}
                 handleEdit={handleEdit}
             />
+            <Commerces />
         </div>
     );
 }

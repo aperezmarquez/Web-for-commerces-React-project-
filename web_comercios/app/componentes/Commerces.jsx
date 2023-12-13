@@ -50,14 +50,14 @@ const commerce = ({ id, tittle, text, handleDelete, handleEdit }) => {
     return (
         <div className="commerce">
             <div className='commerce-info'>
-                <div className="commerce-header" id={id + 'header'}>
-                    <h2 className="commerce-tittle">Comercio 1</h2>
-                    <div className="commerce-small-description ml-2 mt-3">Descripcion pequeña</div>
-                    <div className='commerce-description ml-2 mt-3'>Descripcion</div>
-                </div>
-
                 <div className="commerce-footer absolute" id='footer'>
                     <button className='commerce-visit rounded-xl' id={id + 'boton'} onClick={changeToEditMode}>Visit Commerce</button>
+                </div>
+
+                <div className="commerce-header" id={id + 'header'}>
+                    <h2 className="commerce-tittle">Arcades</h2>
+                    <div className="commerce-small-description ml-2 mt-3">Venta de arcade machines</div>
+                    <div className='commerce-description ml-2 mt-3'>Descripcion de tienda de arcade machines</div>
                 </div>
             </div>
         </div>
