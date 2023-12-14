@@ -2,10 +2,10 @@
 
 import Searcher from "../componentes/Searcher";
 import CommerceList from "../componentes/CommerceList";
-import Commerces from "../componentes/Commerces";
-import { useEffect, useState } from 'react'
+
 import { nanoid } from 'nanoid'
 import './commercesPage.css';
+import { useState } from "react";
 
 export default function Comercios () {
     const [commerces, setCommerces] = useState([
@@ -18,17 +18,20 @@ export default function Comercios () {
       {
         id: nanoid(),
         tittle: "Vinils",
-        text: "text"
+        text: "text",
+        url: "../imgs/Vinil.jpg"
       },
       {
         id: nanoid(),
         tittle: "Clocks",
-        text: "text"
+        text: "text",
+        url: "../imgs/clocks.jpg"
       },
       {
         id: nanoid(),
         tittle: "Objects",
-        text: "text"
+        text: "text",
+        url: "../imgs/Objects.jpg"
       }
     ])
 
