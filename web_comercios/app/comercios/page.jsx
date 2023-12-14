@@ -1,60 +1,32 @@
-"use client"
+import './userSelector.css';
+import Link from 'next/link';
 
-import Searcher from "../componentes/Searcher";
-import CommerceList from "../componentes/CommerceList";
 
-import { nanoid } from 'nanoid'
-import './commercesPage.css';
-import { useState } from "react";
-
-export default function Comercios () {
-    const [commerces, setCommerces] = useState([
-      {
-        id: nanoid(),
-        tittle: "Arcade",
-        text: "text",
-        url: '../imgs/arcade_machine.jpg'
-      },
-      {
-        id: nanoid(),
-        tittle: "Vinils",
-        text: "text",
-        url: "../imgs/Vinil.jpg"
-      },
-      {
-        id: nanoid(),
-        tittle: "Clocks",
-        text: "text",
-        url: "../imgs/clocks.jpg"
-      },
-      {
-        id: nanoid(),
-        tittle: "Objects",
-        text: "text",
-        url: "../imgs/Objects.jpg"
-      }
-    ])
-
-    const createNewNote = (tittle, text) => {
-      const newCommerce = {
-        id: nanoid(),
-        tittle: tittle,
-        text: text
-      }
-  
-      const newCommerces = [...commerces, newCommerce];
-      setCommerces(newCommerces);
-    }
-  
-    const [commerceName, setCommerceName] = useState('');
-
+export default function UserSelection() {
     return (
-        <div className="page-commerces w-full p-10 absolute">
-            <Searcher setCommerceName={setCommerceName}/>
-            <CommerceList
-                commerces={commerces.filter((commerce) => commerce.tittle.toLowerCase().includes(commerceName.toLowerCase()))} 
-                createNote={createNewNote}
-            />
+        <div className="users-container h-screen flex items-center justify-center">
+            <div className="users-selector grid grid-cols-3 gap-10">
+                <Link className="users-user flex items-end justify-center" href='http://localhost:3000/comercios/users'>
+                    <div className='users-user-info flex items-center justify-center'>
+                        <h1 className='users-info-text'>User</h1>
+                        <div className='border-line absolute'></div>
+                    </div>
+                </Link>
+
+                <Link className="users-commerce flex items-end justify-center" href='http://localhost:3000/comercios/commerce'>
+                    <div className='users-commerce-info flex items-center justify-center'>
+                        <h1 className='users-info-text'>Commerce</h1>
+                        <div className='border-line absolute'></div>
+                    </div>
+                </Link>
+
+                <Link className="users-admin flex items-end justify-center" href='http://localhost:3000/comercios/admin'>
+                    <div className='users-admin-info flex items-center justify-center'>
+                        <h1 className='users-info-text'>Admin</h1>
+                        <div className='border-line absolute'></div>
+                    </div>
+                </Link>
+            </div>
         </div>
     );
 }

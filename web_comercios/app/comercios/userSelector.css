@@ -1,0 +1,93 @@
+.users-container {
+    background-color: #F0E7DE;
+}
+
+.users-user {
+    width: 15em;
+    height: 20em;
+
+    background: url('../imgs/user.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.users-commerce {
+    width: 15em;
+    height: 20em;
+
+    background: url('../imgs/commerce.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.users-admin {
+    width: 15em;
+    height: 20em;
+
+    background: url('../imgs/admin.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.users-user-info {
+    height: 3em;
+    width: 15em;
+
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.320, 1);
+
+    background-color: rgba(33,33,33,1);
+    color: #54adb1;
+
+    font-weight: 600;
+    font-size: large;
+}
+
+.users-commerce-info {
+    height: 3em;
+    width: 15em;
+
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.320, 1);
+
+    background-color: rgba(33,33,33,1);
+    color: #54adb1;
+
+    font-weight: 600;
+    font-size: large;
+}
+
+.users-admin-info {
+    height: 3em;
+    width: 15em;
+
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.320, 1);
+
+    background-color: rgba(33,33,33,1);
+    color: #54adb1;
+
+    font-weight: 600;
+    font-size: large;
+}
+
+.border-line {
+    height: 0.3em;
+    width: 13.31em;
+
+    bottom: 6%;
+
+    background-color: #ff9d00;
+}
+
+.users-user:hover .users-user-info {
+    height: 17.78em;
+    background-color: rgba(33,33,33,0.5);
+}
+
+.users-commerce:hover .users-commerce-info {
+    height: 17.78em;
+    background-color: rgba(33,33,33,0.5);
+}
+
+.users-admin:hover .users-admin-info {
+    height: 17.78em;
+    background-color: rgba(33,33,33,0.5);
+}

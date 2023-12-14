@@ -1,13 +1,11 @@
 import './Commerces.css'
 import Link from 'next/link';
-import Image from 'next/image';
 
 const commerce = ({ id, tittle, text, url }) => {
 
     return (
         <div>
-            <div className="commerce">
-                <Image src={url} className='commerce-img' width={20} height={2}/>
+            <div className="commerce" id='comercio_x'>
                 <div className='commerce-info'>
                     <div className="commerce-footer absolute" id='footer'>
                         <Link className='commerce-visit rounded-xl' id={id + 'boton'} href=''>Visit Commerce</Link>
