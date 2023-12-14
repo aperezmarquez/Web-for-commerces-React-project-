@@ -12,7 +12,8 @@ export default function Comercios () {
       {
         id: nanoid(),
         tittle: "Arcade",
-        text: "text"
+        text: "text",
+        url: '../imgs/arcade_machine.jpg'
       },
       {
         id: nanoid(),
@@ -45,9 +46,9 @@ export default function Comercios () {
     const [commerceName, setCommerceName] = useState('');
 
     return (
-        <div className="page-commerces h-full w-full p-10 absolute">
+        <div className="page-commerces w-full p-10 absolute">
             <Searcher setCommerceName={setCommerceName}/>
-            <CommerceList 
+            <CommerceList
                 commerces={commerces.filter((commerce) => commerce.tittle.toLowerCase().includes(commerceName.toLowerCase()))} 
                 createNote={createNewNote}
             />

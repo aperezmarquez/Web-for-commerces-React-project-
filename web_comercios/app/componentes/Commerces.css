@@ -7,8 +7,11 @@
     margin-left: 2em;
     margin-bottom: 2em;
 
-    background: url('../imgs/arcade_machine.jpg');
+    width: 15em;
+    height: 17em;
+}
 
+.commerce-img {
     width: 15em;
     height: 17em;
 }

@@ -1,4 +1,7 @@
 .searcher {
+    display: flex;
+    justify-content: center;
+
     margin-top: 1em;
     margin-left: 1.1em;
 }
@@ -10,13 +13,13 @@
     padding-left: 3.5%;
 
     height: 2.2em;
-    width: 100%;
+    width: 50%;
 
     border-radius: 0.3em;
 }
 
 .search-icon {
-    margin-left: 1.2em;
+    margin-right: 27.2em;
     margin-top: 0.5em;
 }
 
