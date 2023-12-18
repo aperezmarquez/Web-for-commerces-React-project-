@@ -1,0 +1,133 @@
+@property --input_bg_color {
+    syntax: 'color';
+    initial-value: rgb(61, 61, 61);
+    inherits: false;
+}
+
+@property --title_color {
+    syntax: 'color';
+    initial-value: #00929a;
+    inherits: false;
+}
+
+@property --placeholder_color {
+    syntax: 'color';
+    initial-value: rgb(139, 139, 139);
+    inherits: false;
+}
+
+.admin-bg {
+    --input_bg_color: rgb(61, 61, 61);
+    --title_color: #00929a;
+    --placeholder_color: rgb(139, 139, 139);
+
+    background-color: #F0E7DE;
+}
+
+.admin-form {
+    width: 60%;
+    height: 65%;
+    background-color: rgb(33, 33, 33);
+}
+
+.admin-form-title {
+    color: var(--title_color);
+    font-weight: 600;
+    font-size: larger;
+
+    transition: 0.5s;
+
+    z-index: 1;
+}
+
+.admin-form-object {
+    padding: .5%;
+    padding-left: 1%;
+    padding-right: 1%;
+
+    background-color: var(--input_bg_color);
+    border-color: rgb(50, 50, 50);
+
+    color: #f0ece8;
+
+    transition: 0.5s;
+
+    z-index: 1;
+}
+
+.admin-form:hover .admin-form-object {
+    color: rgb(33, 33, 33);
+}
+
+.admin-form-object::placeholder {
+    color: var(--placeholder_color);
+}
+
+.admin-form-bar {
+    width: 1em;
+    height: 22.55em;
+
+    transition: all 0.7s cubic-bezier(0.23, 1, 0.320, 1);
+
+    top: 11.6%;
+    right: 20%;
+    background: linear-gradient(45deg, #a60042 0%, #a83262 15%, #ff9d00 75%, #ffb53e 100%);
+}
+
+.admin-form:hover .admin-form-bar {
+    width: 40.4em;
+}
+
+.admin-img-selector {
+    background-color: var(--input_bg_color);
+
+    border-width: 0.1em;
+    border-color: var(--input_bg_color);
+
+    padding-right: 0.2em;
+
+    color: var(--placeholder_color);
+
+    transition: 0.5s;
+
+    z-index: 1;
+}
+
+.admin-img-selector::file-selector-button {
+    background-color: var(--input_bg_color);
+
+    color: #eae4e1;
+
+    transition: 0.5s;
+
+    border-right-color: var(--placeholder_color);
+
+    border: none;
+}
+
+.admin-form:hover .admin-img-selector::file-selector-button {
+    color: #1f1e1b;
+}
+
+.admin-submit {
+    background-color: #57abb8;
+    padding-inline: 4em;
+    padding-block: 0.4em;
+
+    font-weight: 500;
+
+    transition: 0.5s;
+
+    z-index: 1;
+}
+
+.admin-form:hover .admin-submit {
+    background-color: rgb(33, 33, 33);
+    color: #f0ece8;
+}
+
+.admin-form:hover {
+    --title_color: rgb(33, 33, 33);
+    --input_bg_color: #deac4a;
+    --placeholder_color: #585249;
+}
