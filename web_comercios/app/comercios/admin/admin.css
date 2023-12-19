@@ -25,7 +25,7 @@
 }
 
 .admin-form {
-    width: 60%;
+    width: 52%;
     height: 65%;
     background-color: rgb(33, 33, 33);
 }
@@ -50,6 +50,8 @@
 
     color: #f0ece8;
 
+    resize: none;
+
     transition: 0.5s;
 
     z-index: 1;
@@ -70,12 +72,12 @@
     transition: all 0.7s cubic-bezier(0.23, 1, 0.320, 1);
 
     top: 11.6%;
-    right: 20%;
+    right: 24%;
     background: linear-gradient(45deg, #a60042 0%, #a83262 15%, #ff9d00 75%, #ffb53e 100%);
 }
 
 .admin-form:hover .admin-form-bar {
-    width: 40.4em;
+    width: 35em;
 }
 
 .admin-img-selector {
@@ -94,7 +96,7 @@
 }
 
 .admin-img-selector::file-selector-button {
-    background-color: var(--input_bg_color);
+    background-color: rgb(49, 49, 49);
 
     color: #eae4e1;
 
@@ -106,6 +108,8 @@
 }
 
 .admin-form:hover .admin-img-selector::file-selector-button {
+    background-color: #f4c25e;
+
     color: #1f1e1b;
 }
 
