@@ -26,12 +26,16 @@ export default function Admin() {
     }
 
     async function handleSubmit(e) {
-        const submitData = {title, smDesc, desc, url}
+        e.preventDefault();
+        const submitData = { title, smDesc, desc, url };
         
         try {
-            const res = await fetch('http://localhost:3000/api/commerces', {
+            const res = await fetch('/api/commerces', {
                 method: 'POST',
-                body: JSON.stringify(submitData)
+                body: JSON.stringify(submitData),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             });
             console.log(res);
         } catch (e) {
