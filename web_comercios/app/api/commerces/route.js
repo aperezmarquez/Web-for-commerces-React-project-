@@ -2,9 +2,13 @@ import { NextResponse } from "next/server";
 import { readFileSync, writeFileSync } from 'fs';
 
 export async function GET(){
-    const commerces = JSON.parse(readFileSync('data/commerces.json', "utf-8"));
+    try {
+        const commerces = JSON.parse(readFileSync('data/commerces.json', "utf-8"));
 
-    return NextResponse.json({ data : commerces }, { status : 200 });
+        return NextResponse.json(commerces);
+    } catch (e) {
+        return NextResponse.json({ message : "ERROR: No se pudieron encontrar los comercios", status : 404 });
+    }
 }
 
 export async function POST(request) {

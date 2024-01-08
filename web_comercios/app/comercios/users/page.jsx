@@ -10,28 +10,21 @@ import { useState } from "react";
 export default function Comercios () {
     const [commerces, setCommerces] = useState([])
 
+    function setData(data) {
+      if (data.status != 404) {
+        setCommerces(data)
+      }
+    }
+
     try {
-      const res = fetch('/api/commerces', {
+      const res = fetch('/api/commerces/', {
           method: 'GET',
           headers: {
               'Content-Type': 'application/json'
           }
-      });
-      console.log(res.data);
-      // setCommerces(JSON.parse(res));
+      }).then((res) => res.json()).then((data) => setData(data));
     } catch (e) {
       console.log(e);
-    }
-
-    const createNewNote = (tittle, text) => {
-      const newCommerce = {
-        id: nanoid(),
-        tittle: tittle,
-        text: text
-      }
-  
-      const newCommerces = [...commerces, newCommerce];
-      setCommerces(newCommerces);
     }
   
     const [commerceName, setCommerceName] = useState('');
@@ -40,8 +33,7 @@ export default function Comercios () {
         <div className="page-commerces w-full p-10 absolute">
             <Searcher setCommerceName={setCommerceName}/>
             <CommerceList
-                commerces={commerces.filter((commerce) => commerce.tittle.toLowerCase().includes(commerceName.toLowerCase()))} 
-                createNote={createNewNote}
+                commerces={commerces.filter((commerce) => commerce.title.toLowerCase().includes(commerceName.toLowerCase()))}
             />
         </div>
     );
