@@ -27,25 +27,25 @@ export default function Admin() {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        const submitData = { title, smDesc, desc, url };
+        const submitData = { 
+            title : title, 
+            smDesc: smDesc, 
+            desc : desc, 
+            url : url };
+        console.log(submitData)
         
         try {
-            const res = await fetch('/api/commerces', {
+            const res = fetch('/api/commerces', {
                 method: 'POST',
-                body: JSON.stringify(submitData),
                 headers: {
                     'Content-Type': 'application/json'
-                }
+                },
+                body: JSON.stringify(submitData)
             });
             console.log(res);
         } catch (e) {
             console.log(e);
         }
-
-        setTitle('');
-        setSmDesc('');
-        setDesc('');
-        setUrl('');
     }
     
     return (

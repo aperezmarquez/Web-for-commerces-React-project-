@@ -8,32 +8,20 @@ import './commercesPage.css';
 import { useState } from "react";
 
 export default function Comercios () {
-    const [commerces, setCommerces] = useState([
-      {
-        id: nanoid(),
-        tittle: "Arcade",
-        text: "text",
-        url: "arcade_machine.jpg"
-      },
-      {
-        id: nanoid(),
-        tittle: "Vinils",
-        text: "text",
-        url: "Vinil.jpg"
-      },
-      {
-        id: nanoid(),
-        tittle: "Clocks",
-        text: "text",
-        url: "clocks.jpg"
-      },
-      {
-        id: nanoid(),
-        tittle: "Objects",
-        text: "text",
-        url: "Objects.jpg"
-      }
-    ])
+    const [commerces, setCommerces] = useState([])
+
+    try {
+      const res = fetch('/api/commerces', {
+          method: 'GET',
+          headers: {
+              'Content-Type': 'application/json'
+          }
+      });
+      console.log(res.data);
+      // setCommerces(JSON.parse(res));
+    } catch (e) {
+      console.log(e);
+    }
 
     const createNewNote = (tittle, text) => {
       const newCommerce = {
