@@ -13,25 +13,25 @@ export default function Comercios () {
         id: nanoid(),
         tittle: "Arcade",
         text: "text",
-        url: "../../imgs/arcade_machine.jpg"
+        url: "arcade_machine.jpg"
       },
       {
         id: nanoid(),
         tittle: "Vinils",
         text: "text",
-        url: "../../imgs/Vinil.jpg"
+        url: "Vinil.jpg"
       },
       {
         id: nanoid(),
         tittle: "Clocks",
         text: "text",
-        url: "../../imgs/clocks.jpg"
+        url: "clocks.jpg"
       },
       {
         id: nanoid(),
         tittle: "Objects",
         text: "text",
-        url: "../../imgs/Objects.jpg"
+        url: "Objects.jpg"
       }
     ])
 

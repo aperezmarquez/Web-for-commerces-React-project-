@@ -8,7 +8,7 @@ export async function POST(request) {
     const smDesc = await request.body.smDesc;
     const desc = await request.body.desc;
     const url = await request.body.url;
-    
+
     const newCommerce = {
         title: title,
         smDesc: smDesc,
@@ -19,10 +19,10 @@ export async function POST(request) {
     const file = await fs.readFile(process.cwd() + "/data/commerces.json", "utf-8")
 
     try{
-        const commerces = JSON.parse(readFileSync('/data/commerces.json'))
-        writeFileSync("/data/commerces.json", JSON.stringify([...commerces, newCommerce]))
+        const commerces = JSON.parse(fs.readFileSync('/data/commerces.json'))
+        fs.writeFileSync("/data/commerces.json", JSON.stringify([...commerces, newCommerce]))
     } catch(e){  
-        writeFileSync("/data/commerces.json", JSON.stringify([newCommerce]))
+        fs.writeFileSync("/data/commerces.json", JSON.stringify([newCommerce]))
     }
 
     return NextResponse.json({message: "Commerce saved..."});
