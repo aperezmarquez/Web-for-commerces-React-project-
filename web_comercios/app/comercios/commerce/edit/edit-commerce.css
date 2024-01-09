@@ -1,0 +1,69 @@
+.title-input {
+    width: 100%;
+    margin-top: 1%;
+
+    font-weight: 500;
+    font-size: 2em;
+
+    color: rgb(39, 39, 39);
+    background-color: rgb(231, 229, 222);
+}
+
+.title-label {
+    background-color: rgb(56, 56, 56);
+    color: rgb(239, 235, 235);
+
+    height: 22.2%;
+}
+
+.smDesc-input {
+    width: 100%;
+    resize: none;
+    margin-top: 1%;
+
+    color: rgb(39, 39, 39);
+    background-color: rgb(231, 229, 222);
+}
+
+.desc-input {
+    width: 100%;
+    height: 88%;
+    resize: none;
+
+    margin-top: 1%;
+
+    color: rgb(39, 39, 39);
+    background-color: rgb(231, 229, 222);
+}
+
+.desc-label {
+    background-color: rgb(56, 56, 56);
+    color: rgb(239, 235, 235);
+
+    height: 52.5%;
+}
+
+.url-button {
+    background-color: rgb(232, 229, 229);
+    color: rgb(34, 34, 34);
+
+    width: 100%;
+}
+
+.url-button::file-selector-button {
+    background-color: rgb(25, 25, 25);
+    color: rgb(234, 229, 229);
+
+    border: none;
+}
+
+.url-label {
+    background-color: rgb(56, 56, 56);
+    color: rgb(239, 235, 235);
+
+    height: 10%;
+}
+
+/* .right-zone {
+    margin-top: 10.5%;
+} */
