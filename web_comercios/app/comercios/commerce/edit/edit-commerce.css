@@ -64,6 +64,29 @@
     height: 10%;
 }
 
-/* .right-zone {
-    margin-top: 10.5%;
-} */
+.right-zone {
+    display: flex;
+    flex-direction: column;
+}
+
+.save-button {
+    background-color: #7e0028;
+    color: #c7a5b1;
+
+    width: 25%;
+    height: 10%;
+
+    border-radius: 0.5em;
+
+    font-size: 1.3em;
+
+    align-self: flex-end;
+
+    transition: all 0.5s;
+}
+
+.save-button:hover {
+    color: #dfccd3;
+
+    box-shadow: 0 0 10px 5px #7e0028;
+}

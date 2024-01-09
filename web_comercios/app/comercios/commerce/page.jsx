@@ -37,7 +37,7 @@ export default function Commerce() {
 
     return (
         <>
-            <EditCommerce commerce={commerce} setCommerce={setCommerce}></EditCommerce>
+            <EditCommerce commerce={commerce}></EditCommerce>
         </>
     );
 }

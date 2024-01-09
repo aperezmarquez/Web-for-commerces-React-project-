@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import './edit-commerce.css'
 
-export default function EditCommerce ({ commerce, setCommerce }) {
-    const [tempCommerce, setTempCommerce] = useState(commerce)
+export default function EditCommerce ({ commerce }) {
     const [changedComm, setChangedComm] = useState(false)
 
     const [title, setTitle] = useState("")
@@ -21,6 +20,57 @@ export default function EditCommerce ({ commerce, setCommerce }) {
         }
     }
 
+    function changeEmail(changeUser) {
+        fetch('/api/signin', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(changeUser)
+        })
+    }
+
+    function changeCommerce(commerceChange) {
+        fetch('/api/commerces', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(commerceChange)
+        })
+    }
+
+    function handleSubmit() {
+        const newCommerce = {
+            commerceChange : commerce.title,
+            title : title,
+            smDesc : smDesc,
+            desc : desc,
+            url : url, 
+        }
+
+        if (title != commerce.title) {
+            const changeUser = {
+                changeEmail : commerce.title,
+                email : title,
+            }
+            changeCommerce(newCommerce)
+            changeEmail(changeUser)
+        }
+
+        if (smDesc != commerce.smDesc) {
+            changeCommerce(newCommerce)
+        }
+
+        if (desc != commerce.desc) {
+            changeCommerce(newCommerce)
+        }
+
+        if (url != commerce.url) {
+            changeCommerce(newCommerce)
+        }
+    }
+
     return (
         <div className="fondo w-full h-screen flex mx-auto">
             <div className="left-zone w-1/2 p-8">
@@ -33,6 +83,9 @@ export default function EditCommerce ({ commerce, setCommerce }) {
                     <label for='smDesc'>Small Description</label>
                     <textarea id='smDesc' value={smDesc} onChange={(e) => setSmDesc(e.target.value)} className='smDesc-input p-2'></textarea>
                 </div>
+                <div className='url-label p-2 mt-10'>
+                    <input type='file' id='url' accept="image/png, image/jpeg" className='url-button mt-1' onChange={(e) => setUrl(e.target.value)}></input>
+                </div>
             </div>
 
             <div className="right-zone w-1/2 p-8">
@@ -40,9 +93,7 @@ export default function EditCommerce ({ commerce, setCommerce }) {
                     <label for='desc' className='desc-label'>Description</label>
                     <textarea id='desc' value={desc} onChange={(e) => setDesc(e.target.value)} className='desc-input p-2'></textarea>
                 </div>
-                <div className='url-label p-2 mt-10'>
-                    <input type='file' id='url' accept="image/png, image/jpeg" className='url-button mt-1' onChange={(e) => setUrl(e.target.value)}></input>
-                </div>
+                <button className='save-button mt-10' onClick={handleSubmit}>Save</button>
             </div>
         </div>
     );
