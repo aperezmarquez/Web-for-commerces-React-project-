@@ -4,6 +4,24 @@ import { useState } from 'react';
 import './admin.css'
 
 export default function Admin() {
+    const [notCheck, setNotCheck] = useState(true);
+
+    if (notCheck) {
+        fetch('/api/user', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then((res) => res.json()).then((user) => checkUser(user))
+        setNotCheck(false)
+    }
+
+    function checkUser(user) {
+        if(user[0].role != 'admin'){
+            window.location.replace('http://localhost:3000/comercios')
+        }
+    }
+
     const [title, setTitle] = useState('');
     const [smDesc, setSmDesc] = useState('');
     const [desc, setDesc] = useState('');
@@ -25,6 +43,8 @@ export default function Admin() {
         event.target.placeholder = "Description";
     }
 
+    
+
     async function handleSubmit(e) {
         e.preventDefault();
         const submitData = { 
@@ -41,6 +61,18 @@ export default function Admin() {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(submitData)
+            });
+            console.log(res);
+        } catch (e) {
+            console.log(e);
+        }
+
+        try {
+            const res = fetch('/api/user', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             });
             console.log(res);
         } catch (e) {

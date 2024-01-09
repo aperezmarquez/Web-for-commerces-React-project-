@@ -8,7 +8,7 @@ const Searcher = ({ setCommerceName }) => {
     }
 
     return (
-        <div className='searcher pr-9'>
+        <div className='searcher pr-9 absolute'>
             <Image src={search_image} className='search-icon w-5 absolute'/>
             <input type='text' className='searcher-text ml-3' placeholder='Search a commerce...' onChange={handleChange}></input>
         </div>

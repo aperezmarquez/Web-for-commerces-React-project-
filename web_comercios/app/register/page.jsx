@@ -20,15 +20,12 @@ export default function Register () {
         event.target.placeholder = "Password";
     }
 
-    function handleUnFocusRP(event) {
-        event.target.placeholder = "Repeat Password";
-    }
-
     const handleClick = (event) => {
         event.preventDefault();
         const user = {
+            role: "user",
             email: email,
-            password: password,
+            passwd: password
         }
 
 
@@ -38,12 +35,9 @@ export default function Register () {
             'Content-Type': 'application/json',
             },
             body: JSON.stringify(user)
-        })
-            .then((res) => res.json())
-            .then((data) => console.log(data))
-        
-        
-        router.push("/")
+        }).then(setTimeout(function(){
+            window.location.replace("http://localhost:3000/sign-in");
+        }, 2000))
     }
 
     return (
@@ -64,7 +58,8 @@ export default function Register () {
                        onFocus={handleFocus}
                        onBlur={handleUnFocusP}
                        onChange={(e) => setPassword(e.target.value)}></input>
-                <button className="login-button-register w-44 h-10 border transition ease-in delay-100 place-self-end hover:bg-slate-400 active:bg-red-600">REGISTER</button>
+                <button className="login-button-register w-44 h-10 border transition ease-in delay-100 place-self-end hover:bg-slate-400 active:bg-red-600"
+                       onClick={handleClick}>REGISTER</button>
                 <div className='hover-background-register absolute'></div>
             </div>
         </div>

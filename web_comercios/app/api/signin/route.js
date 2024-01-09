@@ -4,16 +4,14 @@ import { readFileSync } from 'fs';
 export async function POST(request) {
     const data = await request.json()
     try{
-        console.log(data)
-        const users = JSON.parse(readFileSync("data/users.txt"))
-        console.log(users)
-        const user = users.filter(user => user.email == data.email && user.password == data.password)
+        const users = JSON.parse(readFileSync("data/users.json"))
+        const user = users.filter((user) => user.email == data.email && user.passwd == data.passwd)
         if (user.length > 0) {
-            return NextResponse.json({message: "Usuario existe...", status: 200})
+            return NextResponse.json(user)
         } else {
-            return NextResponse.json({message: "Usuario no existe...", status: 400})
+            return NextResponse.json({message: "Usuario no existe...", status: 404})
         }
     } catch(e){  
-        return NextResponse.json({message: "Usuario no existe...", status: 400})
+        return NextResponse.json({message: "Usuario no existe...", status: 404})
     }
 }

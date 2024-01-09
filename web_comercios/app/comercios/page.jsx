@@ -5,7 +5,7 @@ import Link from 'next/link';
 export default function UserSelection() {
     return (
         <div className="users-container h-screen flex items-center justify-center">
-            <div className="users-selector grid grid-cols-3 gap-10">
+            <div className="users-selector grid grid-cols-3 gap-10 absolute">
                 <Link className="users-user flex items-end justify-center" href='http://localhost:3000/comercios/users'>
                     <div className='users-user-info flex items-center justify-center'>
                         <h1 className='users-info-text'>User</h1>

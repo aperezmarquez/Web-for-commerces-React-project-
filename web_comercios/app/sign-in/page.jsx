@@ -1,8 +1,12 @@
 "use client"
 import './sigin.css';
 import Home from '../page.js'
+import { useState } from 'react';
 
 export default function Sig_in () {
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+    
     function handleFocus(event) {
         event.target.placeholder = "";
     }
@@ -13,6 +17,35 @@ export default function Sig_in () {
 
     function handleUnFocusP(event) {
         event.target.placeholder = "Password";
+    }
+
+    function setUser(data) {
+        if (data.status != 404) {
+            fetch("/api/user", {
+                method: "POST",
+                headers: {
+                'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data[0])
+            }).then(setTimeout(function(){
+                window.location.replace('http://localhost:3000');
+            }, 500))
+        }
+    }
+
+    function handleClick() {
+        const user = {
+            email : email,
+            passwd : password
+        }
+        
+        const data = fetch("/api/signin", {
+            method: "POST",
+            headers: {
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user)
+        }).then((res) => res.json()).then((data) => setUser(data));
     }
     
     return (
@@ -25,13 +58,16 @@ export default function Sig_in () {
                        className="input text-center w-72 h-10 border rounded-sm transition-opacity" 
                        placeholder="Email" 
                        onFocus={handleFocus} 
-                       onBlur={handleUnFocusU}></input>
+                       onBlur={handleUnFocusU}
+                       onChange={(e) => setEmail(e.target.value)}></input>
                 <input type="password" 
                        className="input text-center w-72 h-10 border rounded-sm" 
                        placeholder="Password"
                        onFocus={handleFocus}
-                       onBlur={handleUnFocusP}></input>
-                <button className="login-button w-44 h-10 border transition ease-in place-self-end delay-100 hover:bg-slate-400 active:bg-red-600">LOG IN</button>
+                       onBlur={handleUnFocusP}
+                       onChange={(e) => setPassword(e.target.value)}></input>
+                <button className="login-button w-44 h-10 border transition ease-in place-self-end delay-100 hover:bg-slate-400 active:bg-red-600"
+                       onClick={handleClick}>LOG IN</button>
                 <div className='hover-background absolute'></div>
             </div>
         </div>
