@@ -24,6 +24,10 @@ export async function POST(request) {
     console.log(newCommerce);
 
     if (data.commerceChange == undefined) {
+        if (data.url == "") {
+            data.url = '/descarga.png'
+        }
+        
         try{
             const commerces = JSON.parse(readFileSync('data/commerces.json', "utf-8"));
             writeFileSync('data/commerces.json', JSON.stringify([...commerces, newCommerce]));
@@ -36,7 +40,7 @@ export async function POST(request) {
         const commercesChange = commerces.filter((commerce) => commerce.title != data.commerceChange)
 
         try {
-            writeFileSync('data/commerces.json', JSON.stringify([commercesChange, newCommerce]));
+            writeFileSync('data/commerces.json', JSON.stringify([...commercesChange, newCommerce]));
         } catch (e) {
             return NextResponse.json({ message : "No se encontro el json de comercios", status : 404 })
         }

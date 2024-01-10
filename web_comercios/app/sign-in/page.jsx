@@ -4,8 +4,8 @@ import Home from '../page.js'
 import { useState } from 'react';
 
 export default function Sig_in () {
-    const [email, setEmail] = useState();
-    const [password, setPassword] = useState();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     
     function handleFocus(event) {
         event.target.placeholder = "";
@@ -30,6 +30,10 @@ export default function Sig_in () {
             }).then(setTimeout(function(){
                 window.location.replace('http://localhost:3000');
             }, 500))
+        } else {
+            alert("User not found!");
+            setEmail("");
+            setPassword("");
         }
     }
 
@@ -56,13 +60,15 @@ export default function Sig_in () {
                 <h1 className="sigin-text text-start mt-0">SIGN IN</h1>
                 <input type="text" 
                        className="input text-center w-72 h-10 border rounded-sm transition-opacity" 
-                       placeholder="Email" 
+                       placeholder="Email"
+                       value={email}
                        onFocus={handleFocus} 
                        onBlur={handleUnFocusU}
                        onChange={(e) => setEmail(e.target.value)}></input>
                 <input type="password" 
                        className="input text-center w-72 h-10 border rounded-sm" 
                        placeholder="Password"
+                       value={password}
                        onFocus={handleFocus}
                        onBlur={handleUnFocusP}
                        onChange={(e) => setPassword(e.target.value)}></input>

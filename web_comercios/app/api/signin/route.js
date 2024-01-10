@@ -14,11 +14,12 @@ export async function POST(request) {
             }
         } else {
             const usersChange = users.filter((user) => user.email != data.changeEmail)
-            const userToChange = users.filter((user) => user.email == data.changeEmail)
-            if (userToChange.length > 0) {
-                userToChange.email = data.email
-                writeFileSync('data/users.json', JSON.stringify([userToChange, usersChange]))
-            }
+            const userToChange = users.filter((user) => user.email == data.changeEmail)[0]
+            
+            userToChange.email = data.email
+            writeFileSync('data/users.json', JSON.stringify([...usersChange, userToChange]))
+            return NextResponse.json(userToChange)
+            
         }
     } catch(e){  
         return NextResponse.json({message: "Usuario no existe...", status: 404})

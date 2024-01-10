@@ -20,6 +20,19 @@ export default function EditCommerce ({ commerce }) {
         }
     }
 
+    function refreshUser(data) {
+        console.log(data)
+        fetch("/api/user", {
+            method: "POST",
+            headers: {
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
+        }).then(setTimeout(() => {
+            window.location.replace('http://localhost:3000/comercios')
+          }, "500"))
+    }
+
     function changeEmail(changeUser) {
         fetch('/api/signin', {
             method: 'POST',
@@ -27,7 +40,7 @@ export default function EditCommerce ({ commerce }) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(changeUser)
-        })
+        }).then((res) => (res.json())).then((data) => refreshUser(data))
     }
 
     function changeCommerce(commerceChange) {

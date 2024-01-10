@@ -1,0 +1,53 @@
+@property --colorHover1 {
+    syntax: '<color>';
+    initial-value: #FF9D00;
+    inherits: false;
+}
+
+@property --colorHover2 {
+    syntax: '<color>';
+    initial-value: #ff9b05;
+    inherits: false;
+}
+
+@property --colorHover3 {
+    syntax: '<color>';
+    initial-value: #C7004F;
+    inherits: false;
+}
+
+.web-title {
+    font-weight: 700;
+    font-size: 3.7em;
+
+    --porcent: 0%;
+    transition: --colorHover1 1s, --colorHover3 1s;
+    background: linear-gradient(90deg, var(--colorHover1) 0%, var(--colorHover2) 60%, var(--colorHover3) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.web-title:hover {
+    --colorHover1: #C7004F;
+    --colorHover3: #FF9D00;
+}
+
+.web-desc {
+    margin-top: 16%;
+    height: 60%;
+
+    background-color: rgb(60, 60, 60);
+    color: #007076;
+
+    font-weight: 500;
+    margin-left: 2%;
+}
+
+.comm-border {
+    background-color: #ff9d00;
+
+    width: 1%;
+    height: 53.1%;
+
+    top: 19.1%;
+}
