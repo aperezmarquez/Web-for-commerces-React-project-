@@ -9,7 +9,7 @@ export default function EditCommerce ({ commerce }) {
     const [desc, setDesc] = useState("")
     const [url, setUrl] = useState("")
 
-    if (commerce.title != undefined) {
+    if (commerce != undefined) {
         if (!changedComm) {
             console.log(commerce)
             setTitle(commerce.title)

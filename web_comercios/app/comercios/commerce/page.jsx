@@ -33,8 +33,10 @@ export default function Commerce() {
     function getCommerce(commerces, user) {
         const temp = commerces.filter((commerce) => commerce.title == user[0].email)[0]
         setCommerce(temp)
-    }
+    }   
 
+    console.log(commerce)
+    
     return (
         <>
             <EditCommerce commerce={commerce}></EditCommerce>
